@@ -73,9 +73,15 @@ p{margin:0}
 
 /* ---------- hero ---------- */
 .hero{position:relative;isolation:isolate;overflow:hidden;color:#fff;text-align:center}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;z-index:-2;transform:scale(1.06);animation:drift 20s ease-out forwards}
-@keyframes drift{to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,22,28,.35),rgba(20,22,28,.55))}
+.slides{position:absolute;inset:0;z-index:-2;background:var(--night)}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity 1.8s ease,transform 8s ease-out}
+.slides img.on{opacity:1;transform:scale(1)}
+.dots{position:absolute;left:50%;bottom:112px;transform:translateX(-50%);display:flex;gap:10px;z-index:1}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.45);transition:background .4s}
+.dots i.on{background:#fff}
+.photo-note{position:absolute;right:max(16px,env(safe-area-inset-right,0px));top:12px;font-size:11px;opacity:.75;letter-spacing:.08em;z-index:1}
+@media (max-width:960px){.dots{bottom:auto;top:14px;left:max(16px,env(safe-area-inset-left,0px));transform:none}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 60% 55% at 50% 48%,rgba(20,22,28,.62),rgba(20,22,28,.38) 75%),linear-gradient(180deg,rgba(20,22,28,.25),rgba(20,22,28,.55))}
 .hero .wrap{padding-block:88px 150px;display:grid;justify-items:center}
 .sun{width:min(300px,70vw);aspect-ratio:2/1}
 .sun svg{width:100%;height:100%;overflow:visible}
@@ -92,6 +98,8 @@ p{margin:0}
 .h1-sub::before,.h1-sub::after{content:"";width:clamp(28px,6vw,70px);height:1px;background:currentColor;opacity:.7}
 .hero .lead small{font-size:13px;opacity:.85}
 .host{margin-top:22px}
+.sp{display:none}
+@media (max-width:640px){.sp{display:inline}}
 @media (max-width:560px){.hero .jp{font-size:16px;letter-spacing:.1em;padding-left:.1em}.host span{letter-spacing:.12em;padding:6px 12px}}
 .host span{display:inline-block;border:1px solid rgba(255,255,255,.8);padding:6px 20px;font-family:var(--f-mincho);font-size:clamp(13px,1.6vw,16px);letter-spacing:.24em;background:rgba(20,22,28,.35)}
 .hero .jp{font-family:var(--f-mincho);font-size:clamp(18px,2.8vw,30px);letter-spacing:.24em;padding-left:.24em;margin-top:26px;text-shadow:0 2px 14px rgba(0,0,0,.45)}
@@ -281,7 +289,13 @@ footer{border-top:1px solid var(--ink);margin-top:0;padding-block:44px 36px;font
 
 <main id="top">
 <section class="hero" style="padding-block:0">
-  <img src="img/bbs-theater.jpg" alt="">
+  <div class="slides" aria-hidden="true">
+    <img class="on" src="img/scene-show.jpg" alt="" style="object-position:62% 40%">
+    <img src="img/show-magic.jpg" alt="" style="object-position:50% 45%">
+    <img src="img/show-stage.jpg" alt="" style="object-position:50% 40%">
+  </div>
+  <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+  <p class="photo-note">写真は会場で開催された過去の公演です</p>
   <div class="wrap">
     <div class="sun" aria-hidden="true">
       <svg viewBox="0 0 300 150">
@@ -296,7 +310,7 @@ footer{border-top:1px solid var(--ink);margin-top:0;padding-block:44px 36px;font
     </div>
     <p class="host"><span>サンミュージックプロダクション 主催公演</span></p>
     <h1><span class="h1-main">SUN MUSIC</span><span class="h1-sub">BAY STAGE</span></h1>
-    <p class="jp">サンミュージックが主催する、笑いと驚きの夜。</p>
+    <p class="jp">サンミュージックが主催する、<br class="sp">笑いと驚きの夜。</p>
     <p class="lead">サンミュージック所属のお笑い芸人・マジシャンが大阪ベイエリアに登場<br><small>会場：グランドプリンスホテル大阪ベイ B.B.S.</small></p>
   </div>
 </section>
@@ -524,6 +538,15 @@ footer{border-top:1px solid var(--ink);margin-top:0;padding-block:44px 36px;font
 
 <script>
 (function(){
+  // hero slideshow
+  var sl=[].slice.call(document.querySelectorAll('.slides img')),dt=[].slice.call(document.querySelectorAll('.dots i')),si=0;
+  if(sl.length>1&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    setInterval(function(){
+      sl[si].classList.remove('on');dt[si].classList.remove('on');
+      si=(si+1)%sl.length;
+      sl[si].classList.add('on');dt[si].classList.add('on');
+    },6500);
+  }
   var g=document.getElementById('rays'),ns='http://www.w3.org/2000/svg',n=32;
   for(var i=0;i<n;i++){
     var a=Math.PI*2*i/n,long=i%2===0,r1=64,r2=long?140:108;
