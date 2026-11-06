@@ -116,11 +116,12 @@ section{padding-block:96px}
 
 /* ---------- cards with overlapping caption ---------- */
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:52px}
-.card{position:relative;padding-bottom:64px;min-width:0}
+.card{display:flex;flex-direction:column;background:#fff;min-width:0}
 .card .ph{overflow:hidden;aspect-ratio:3/2}
 .card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.1,1)}
 .card:hover .ph img{transform:scale(1.04)}
-.card .cap{position:absolute;left:56px;right:56px;bottom:0;background:#fff;padding:22px 30px 26px;box-shadow:0 1px 0 var(--rule)}
+.card .cap{flex:1;display:flex;flex-direction:column;padding:28px 36px 32px}
+.card .spec{margin-top:auto;padding-top:16px}
 .card .tag{font-family:var(--f-roman);font-size:13px;letter-spacing:.3em;color:var(--sun);font-weight:600}
 .card h3{font-family:var(--f-mincho);font-size:22px;letter-spacing:.12em;margin-top:2px}
 .card h3 span{font-family:var(--f-roman);font-size:15px;letter-spacing:.16em;color:var(--sub);margin-left:10px}
@@ -128,7 +129,7 @@ section{padding-block:96px}
 .spec{display:flex;flex-wrap:wrap;gap:6px 8px;margin:14px 0 0;padding:0;list-style:none}
 .spec li{font-size:12px;background:var(--ink);color:#fff;padding:2px 12px;letter-spacing:.1em}
 .note{font-size:12.5px;color:var(--sub);margin-top:28px;text-align:center}
-@media (max-width:860px){.cards{grid-template-columns:1fr;gap:28px}.card{padding-bottom:0}.card .cap{position:relative;left:auto;right:auto;margin:-40px 16px 0}}
+@media (max-width:860px){.cards{grid-template-columns:1fr;gap:24px}.card .cap{padding:22px 22px 26px}}
 
 /* ---------- evening flow ---------- */
 .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:52px 0 0;padding:0;list-style:none}
