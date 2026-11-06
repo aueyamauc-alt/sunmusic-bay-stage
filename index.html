@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>SUN MUSIC BAY STAGE</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="サンミュージック所属のお笑い芸人・マジシャンによる、グランドプリンスホテル大阪ベイ B.B.S.でのステージ。金曜・土曜、月8夜限定。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+/* Layout: follows the hotel site's manners (white ground, pale-grey bands, Mincho headings under a script eyebrow, photo cards with an overlapping white caption) so it can sit behind a link from the hotel. The rising sun is the only SUN MUSIC mark. */
+:root{
+  color-scheme:light;
+  --paper:#FFFFFF;
+  --band:#F4F4F3;      /* the hotel's pale grey bands */
+  --ink:#222222;       /* text and black buttons */
+  --sub:#666666;
+  --rule:#D9D9D9;
+  --gold:#A68A5B;      /* muted gold of the hotel crest */
+  --sun:#C8643B;       /* SUN MUSIC sunrise, sparingly */
+  --night:#14161C;     /* only for photo overlays */
+  --f-script:"Pinyon Script",cursive;
+  --f-roman:"Cormorant Garamond","Shippori Mincho",serif;
+  --f-mincho:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --f-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  --wrap:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.9;letter-spacing:.05em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+a{color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3{text-wrap:balance;font-weight:500;margin:0}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ---------- header ---------- */
+.hd{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--rule)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.mark svg{flex:none}
+.mark span{display:grid;line-height:1.1}
+.mark small{font-family:var(--f-script);font-size:15px;color:var(--gold);letter-spacing:0}
+.mark b{font-family:var(--f-roman);font-weight:600;font-size:20px;letter-spacing:.24em;white-space:nowrap}
+.nav{display:flex;align-items:center}
+.nav a{text-decoration:none;font-family:var(--f-mincho);font-size:14px;padding:4px 20px;border-left:1px solid var(--rule)}
+.nav a:last-of-type{border-right:1px solid var(--rule)}
+.nav a:hover{color:var(--gold)}
+.nav .btn{margin-left:22px;border:0}
+@media (max-width:960px){.nav a:not(.btn){display:none}}
+
+/* ---------- buttons (hotel style) ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:var(--f-body);font-weight:500;font-size:14px;letter-spacing:.14em;text-decoration:none;color:#fff;background:var(--ink);border:1px solid var(--ink);padding:12px 26px;cursor:pointer;transition:background .25s,color .25s}
+.btn:hover{background:#fff;color:var(--ink)}
+.btn-line{display:inline-flex;align-items:center;justify-content:space-between;gap:40px;min-width:264px;padding:14px 22px 14px 36px;border:2px solid var(--ink);background:#fff;text-decoration:none;font-size:14px;letter-spacing:.14em;transition:background .25s,color .25s}
+.btn-line::after{content:"";width:22px;height:6px;border-bottom:1px solid currentColor;border-right:1px solid currentColor;transform:skewX(50deg);transition:transform .3s}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-line:hover::after{transform:skewX(50deg) translateX(5px)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;isolation:isolate;overflow:hidden;color:#fff;text-align:center}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;z-index:-2;transform:scale(1.06);animation:drift 20s ease-out forwards}
+@keyframes drift{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,22,28,.35),rgba(20,22,28,.55))}
+.hero .wrap{padding-block:88px 150px;display:grid;justify-items:center}
+.sun{width:min(300px,70vw);aspect-ratio:2/1}
+.sun svg{width:100%;height:100%;overflow:visible}
+.sun .rays{transform-origin:150px 150px;animation:spin 120s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sun .disc{animation:rise 2.2s cubic-bezier(.2,.7,.1,1) both}
+@keyframes rise{from{transform:translateY(50px)}to{transform:none}}
+.sun .ray{stroke-dasharray:90;stroke-dashoffset:90;animation:draw 1.4s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.presents{font-family:var(--f-script);font-size:clamp(24px,3vw,32px);margin-top:10px;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.hero h1{font-family:var(--f-roman);font-weight:500;font-size:clamp(46px,8vw,92px);letter-spacing:.2em;padding-left:.2em;line-height:1.05;text-shadow:0 2px 20px rgba(0,0,0,.35)}
+.hero .jp{font-family:var(--f-mincho);font-size:clamp(20px,3.2vw,34px);letter-spacing:.32em;padding-left:.32em;margin-top:22px;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.hero .lead{font-family:var(--f-mincho);font-size:15px;letter-spacing:.14em;margin-top:18px;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+
+/* info bar overlapping the hero, like the hotel's booking bar */
+.bar{position:relative;z-index:2;margin-top:-92px}
+.bar-in{background:#fff;box-shadow:0 2px 18px rgba(0,0,0,.08);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px;padding:24px 28px}
+.bar-in h2{font-family:var(--f-mincho);font-size:17px;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.bar dl{display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:12px 28px;margin:0}
+.bar dl div{display:grid;gap:2px;min-width:0}
+.bar dt{font-size:12px;color:var(--sub)}
+.bar dd{margin:0;font-family:var(--f-mincho);font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.bar .btn{padding:14px 30px}
+.bar-top{background:rgba(34,34,34,.88);color:#fff;font-size:13px;padding:8px 28px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:960px){.bar-in{grid-template-columns:1fr;gap:18px}.bar dl{grid-template-columns:1fr 1fr;justify-content:stretch}.bar .btn{width:100%}}
+
+/* ---------- section heading (script + Mincho with underline) ---------- */
+section{padding-block:96px}
+.band{background:var(--band)}
+.half{background:linear-gradient(180deg,var(--paper) 0 42%,var(--band) 42% 100%)}
+.head{text-align:center;display:grid;justify-items:center}
+.head .en{font-family:var(--f-script);font-size:26px;color:var(--sub);line-height:1}
+.head h2{font-family:var(--f-mincho);font-size:clamp(23px,2.8vw,29px);letter-spacing:.24em;padding:6px 0 4px .24em;border-bottom:1px solid var(--ink);margin-top:6px}
+.head .sub{color:var(--sub);margin-top:24px;max-width:44em}
+@media (max-width:640px){section{padding-block:68px}}
+
+/* ---------- concept ---------- */
+.concept-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;margin-top:56px}
+.concept-grid img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.concept-grid h3{font-family:var(--f-mincho);font-size:clamp(21px,2.4vw,26px);letter-spacing:.14em;line-height:1.7}
+.concept-grid .body{display:grid;gap:14px;margin-top:22px;color:#444}
+.concept-grid figcaption{font-size:12px;color:var(--sub);margin-top:8px}
+@media (max-width:860px){.concept-grid{grid-template-columns:1fr;gap:32px}}
+
+/* ---------- cards with overlapping caption ---------- */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:52px}
+.card{position:relative;padding-bottom:64px;min-width:0}
+.card .ph{overflow:hidden;aspect-ratio:3/2}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.1,1)}
+.card:hover .ph img{transform:scale(1.04)}
+.card .cap{position:absolute;left:56px;right:56px;bottom:0;background:#fff;padding:22px 30px 26px;box-shadow:0 1px 0 var(--rule)}
+.card .tag{font-family:var(--f-roman);font-size:13px;letter-spacing:.3em;color:var(--sun);font-weight:600}
+.card h3{font-family:var(--f-mincho);font-size:22px;letter-spacing:.12em;margin-top:2px}
+.card h3 span{font-family:var(--f-roman);font-size:15px;letter-spacing:.16em;color:var(--sub);margin-left:10px}
+.card p{font-size:13.5px;color:#444;margin-top:8px;line-height:1.8}
+.spec{display:flex;flex-wrap:wrap;gap:6px 8px;margin:14px 0 0;padding:0;list-style:none}
+.spec li{font-size:12px;background:var(--ink);color:#fff;padding:2px 12px;letter-spacing:.1em}
+.note{font-size:12.5px;color:var(--sub);margin-top:28px;text-align:center}
+@media (max-width:860px){.cards{grid-template-columns:1fr;gap:28px}.card{padding-bottom:0}.card .cap{position:relative;left:auto;right:auto;margin:-40px 16px 0}}
+
+/* ---------- evening flow ---------- */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:52px 0 0;padding:0;list-style:none}
+.flow li{background:#fff;padding:30px 26px 28px;position:relative;min-width:0}
+.flow .k{font-family:var(--f-roman);font-size:13px;letter-spacing:.3em;color:var(--gold);font-weight:600}
+.flow h3{font-family:var(--f-mincho);font-size:19px;letter-spacing:.1em;margin-top:4px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+.flow p{color:#555;font-size:13.5px;margin-top:12px}
+.flow li:nth-child(3){outline:1px solid var(--sun);outline-offset:-1px}
+.flow li:nth-child(3) .k{color:var(--sun)}
+@media (max-width:860px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.flow{grid-template-columns:1fr}}
+
+/* ---------- venue ---------- */
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:230px 230px;gap:8px;margin-top:52px}
+.gallery figure{margin:0;position:relative;overflow:hidden;min-width:0}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.1,1)}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figure:first-child{grid-row:span 2}
+.gallery figcaption{position:absolute;left:0;bottom:0;background:#fff;font-family:var(--f-mincho);font-size:13px;padding:6px 16px}
+.vspec{display:grid;grid-template-columns:repeat(3,1fr);margin-top:8px;background:#fff}
+.vspec div{padding:22px 26px;min-width:0}
+.vspec div+div{border-left:1px solid var(--rule)}
+.vspec b{display:block;font-family:var(--f-mincho);font-size:22px;font-weight:600;letter-spacing:.08em}
+.vspec span{font-size:13px;color:var(--sub)}
+@media (max-width:860px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 150px 150px}.gallery figure:first-child{grid-column:span 2;grid-row:auto}}
+@media (max-width:560px){.vspec{grid-template-columns:1fr}.vspec div+div{border-left:0;border-top:1px solid var(--rule)}}
+
+/* ---------- ticket ---------- */
+.ticket-box{margin:52px auto 0;max-width:920px;border:1px solid var(--ink);outline:1px solid var(--ink);outline-offset:-7px;padding:52px 56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;background:#fff}
+.ticket-box .k{font-family:var(--f-roman);font-size:14px;letter-spacing:.3em;color:var(--gold);font-weight:600}
+.price{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:6px}
+.price b{font-family:var(--f-roman);font-weight:500;font-size:clamp(54px,7vw,72px);line-height:1;font-variant-numeric:lining-nums tabular-nums}
+.price b small{font-size:.5em;margin-right:4px}
+.price span{color:var(--sub);font-size:14px}
+.inc{list-style:none;padding:0;margin:0;display:grid;gap:0;border-top:1px solid var(--rule)}
+.inc li{padding:12px 0 12px 22px;border-bottom:1px solid var(--rule);font-size:14px;position:relative}
+.inc li::before{content:"";position:absolute;left:2px;top:22px;width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+.ticket-cta{text-align:center;margin-top:40px;display:grid;justify-items:center;gap:14px}
+.ticket-cta p{color:var(--sub);font-size:13.5px}
+@media (max-width:760px){.ticket-box{grid-template-columns:1fr;gap:28px;padding:36px 26px}}
+
+/* ---------- presenter ---------- */
+.pr{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center;margin-top:52px;background:#fff;padding:48px 56px}
+.seal{width:168px;height:168px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;text-align:center;position:relative}
+.seal::before{content:"";position:absolute;inset:7px;border-radius:50%;border:1px solid var(--rule)}
+.seal b{font-family:var(--f-roman);font-weight:600;font-size:21px;letter-spacing:.2em;line-height:1.25}
+.seal small{display:block;font-family:var(--f-script);font-size:16px;color:var(--sun);margin-top:4px}
+.pr h3{font-family:var(--f-mincho);font-size:22px;letter-spacing:.12em}
+.pr p{color:#444;margin-top:14px}
+.pr-stats{display:flex;flex-wrap:wrap;gap:12px 44px;margin-top:20px}
+.pr-stats b{display:block;font-family:var(--f-roman);font-weight:500;font-size:34px;line-height:1.1}
+.pr-stats span{font-size:12.5px;color:var(--sub)}
+.links{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;font-size:13.5px}
+.links a{text-underline-offset:4px}
+@media (max-width:760px){.pr{grid-template-columns:1fr;gap:28px;padding:36px 22px}.seal{width:132px;height:132px}}
+
+/* ---------- access ---------- */
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:52px;align-items:start}
+.access-grid img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.adl{display:grid;grid-template-columns:6.5em 1fr;margin:0;border-top:1px solid var(--ink)}
+.adl dt,.adl dd{margin:0;padding:16px 0;border-bottom:1px solid var(--rule);font-size:14.5px}
+.adl dt{font-family:var(--f-mincho);font-weight:600}
+@media (max-width:760px){.access-grid{grid-template-columns:1fr;gap:28px}.adl{grid-template-columns:5.5em 1fr}}
+
+/* ---------- faq (hotel's grey list rows) ---------- */
+.faq-list{margin:52px auto 0;max-width:980px;display:grid;gap:10px}
+.faq-list details{background:var(--band)}
+.faq-list summary{list-style:none;cursor:pointer;padding:20px 56px 20px 24px;position:relative;font-size:15.5px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::before{content:"Q.";font-family:var(--f-roman);font-weight:600;font-size:19px;color:var(--gold);margin-right:12px}
+.faq-list summary::after{content:"";position:absolute;right:26px;top:50%;width:9px;height:9px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transform:translateY(-70%) rotate(45deg);transition:transform .3s}
+.faq-list details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq-list p{padding:0 24px 22px 56px;color:#444;font-size:14.5px}
+
+/* ---------- notify ---------- */
+.notify-box{max-width:760px;margin:52px auto 0;background:#fff;padding:44px 48px}
+form{display:grid;gap:18px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:grid;gap:6px;font-size:13px;font-weight:500}
+input,select{font:inherit;font-size:15px;color:var(--ink);background:#fff;border:1px solid #BBBBBB;padding:11px 12px;border-radius:0;width:100%;min-width:0}
+input:focus,select:focus{outline:none;border-color:var(--ink)}
+fieldset{border:0;padding:0;margin:0}
+legend{font-size:13px;font-weight:500;padding:0;margin-bottom:8px}
+.chk{display:flex;flex-wrap:wrap;gap:8px 26px}
+.chk label{display:flex;align-items:center;gap:8px;font-weight:400;font-size:14.5px}
+.chk input{width:auto;accent-color:var(--ink)}
+form .btn{justify-self:center;min-width:260px;margin-top:8px;padding:15px 30px}
+.done{border:1px solid var(--ink);padding:16px;text-align:center;font-family:var(--f-mincho)}
+.done.err{border-color:var(--sun);color:var(--sun)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.privacy{background:var(--band);padding:0 18px;font-size:13px}
+.privacy summary{cursor:pointer;padding:12px 0}
+.privacy p{padding-bottom:14px;color:#444;line-height:1.8}
+.agree{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:400;font-size:14px}
+.agree input{width:auto;accent-color:var(--ink)}
+form .btn:disabled{opacity:.5;cursor:wait}
+@media (max-width:560px){.row{grid-template-columns:1fr}.notify-box{padding:30px 20px}}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--ink);margin-top:0;padding-block:44px 36px;font-size:12.5px;color:var(--sub)}
+.ft{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:center}
+.ft dl{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;margin:0}
+.ft dt{font-family:var(--f-roman);font-weight:600;letter-spacing:.2em;color:var(--gold)}
+.ft dd{margin:0;color:var(--ink)}
+.copy{margin-top:28px;text-align:center;font-family:var(--f-roman);letter-spacing:.2em}
+
+/* ---------- reveal (visible at rest; short lift only) ---------- */
+.rv{transition:transform 1s cubic-bezier(.2,.7,.1,1)}
+.js .rv.pre{transform:translateY(24px)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .js .rv.pre{transform:none}
+}
+</style>
+
+<header class="hd">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="SUN MUSIC BAY STAGE トップへ">
+      <svg width="40" height="22" viewBox="0 0 40 22" aria-hidden="true"><path d="M4 21a16 16 0 0 1 32 0" fill="none" stroke="#A68A5B" stroke-width="1.1"/><circle cx="20" cy="21" r="8" fill="#C8643B"/><path d="M0 21.5h40" stroke="#222" stroke-width="1"/></svg>
+      <span><small>Sun Music presents</small><b>BAY STAGE</b></span>
+    </a>
+    <nav class="nav" aria-label="ページ内メニュー">
+      <a href="#program">プログラム</a>
+      <a href="#venue">会場</a>
+      <a href="#ticket">料金</a>
+      <a href="#access">アクセス</a>
+      <a href="#faq">よくある質問</a>
+      <a class="btn" href="#notify">先行案内</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding-block:0">
+  <img src="img/bbs-theater.jpg" alt="">
+  <div class="wrap">
+    <div class="sun" aria-hidden="true">
+      <svg viewBox="0 0 300 150">
+        <defs><clipPath id="hz"><rect width="300" height="150"/></clipPath></defs>
+        <g clip-path="url(#hz)">
+          <g class="rays" id="rays"></g>
+          <circle class="disc" cx="150" cy="150" r="40" fill="#C8643B"/>
+          <circle cx="150" cy="150" r="56" fill="none" stroke="#fff" stroke-width=".7" opacity=".7"/>
+        </g>
+        <path d="M0 149.5h300" stroke="#fff" stroke-width=".8"/>
+      </svg>
+    </div>
+    <p class="presents">Sun Music presents</p>
+    <h1>BAY STAGE</h1>
+    <p class="jp">笑いと驚きの、ホテルの夜。</p>
+    <p class="lead">グランドプリンスホテル大阪ベイ 地下1階「B.B.S.」</p>
+  </div>
+</section>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="bar-top"><span>サンミュージック所属のお笑い芸人・マジシャンが出演します。</span><span>開催スケジュールは近日発表</span></div>
+    <div class="bar-in">
+      <h2><svg width="22" height="12" viewBox="0 0 22 12" aria-hidden="true"><path d="M2 11a9 9 0 0 1 18 0" fill="none" stroke="#A68A5B"/><circle cx="11" cy="11" r="4.5" fill="#C8643B"/></svg>公演のご案内</h2>
+      <dl>
+        <div><dt>開催日</dt><dd>毎週 金・土</dd></div>
+        <div><dt>公演数</dt><dd>月8夜限定</dd></div>
+        <div><dt>公演時間</dt><dd>約2時間</dd></div>
+        <div><dt>料金（お一人様）</dt><dd>¥19,800</dd></div>
+      </dl>
+      <a class="btn" href="#notify">先行案内を受け取る</a>
+    </div>
+  </div>
+</div>
+
+<section class="concept">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Concept</p><h2>コンセプト</h2></div>
+    <div class="concept-grid">
+      <figure class="rv" style="margin:0">
+        <img src="img/bbs-dining.jpg" alt="B.B.S. Event Dining の客席とバーカウンター">
+        <figcaption>B.B.S. Event Dining（グランドプリンスホテル大阪ベイ 地下1階）</figcaption>
+      </figure>
+      <div class="rv">
+        <h3>ホテルで過ごす夜に、<br>ライブの時間を。</h3>
+        <div class="body">
+          <p>テレビや劇場で活躍するサンミュージックのタレントを、ホテルのラウンジのような空間で、すぐ近くの席から楽しめます。</p>
+          <p>舞台の背後と左右を囲むのは4面のLEDビジョン。映像・音響・照明の演出と組み合わせ、この会場ならではのステージをお届けします。</p>
+          <p>ご宿泊の夜のお楽しみに、記念日に、大切な方とのお出かけに。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="half" id="program">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Program</p><h2>プログラム</h2>
+      <p class="sub">開催日ごとに、お笑いかマジックのどちらかを上演します。開催日のプログラムはスケジュール発表時にご案内します。</p></div>
+    <div class="cards">
+      <article class="card rv">
+        <div class="ph"><img src="img/scene-show.jpg" alt="LEDに囲まれたステージで演じるパフォーマーと客席"></div>
+        <div class="cap">
+          <span class="tag">COMEDY NIGHT</span>
+          <h3>お笑いナイト</h3>
+          <p>サンミュージック所属のお笑い芸人2組が出演。ネタ、トーク、客席との掛け合いまで、2時間たっぷり笑える夜です。</p>
+          <ul class="spec"><li>お笑い芸人 2組</li><li>約2時間</li><li>ネタ・トーク・MC</li></ul>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="ph"><img src="img/show-magic.jpg" alt="赤いカーテンの映像を映したステージでのマジックショー"></div>
+        <div class="cap">
+          <span class="tag">MAGIC NIGHT</span>
+          <h3>マジックナイト</h3>
+          <p>サンミュージック所属のマジシャン1組によるステージ。LEDの映像演出と合わせて、目の前で起こる不思議を2時間お楽しみいただけます。</p>
+          <ul class="spec"><li>マジシャン 1組</li><li>約2時間</li><li>ステージマジック</li></ul>
+        </div>
+      </article>
+    </div>
+    <p class="note">※ 出演者は公演ごとに発表します。写真は会場で過去に開催された別のショーの様子です。</p>
+  </div>
+</section>
+
+<section class="band" style="padding-top:24px">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Your Evening</p><h2>当日の流れ</h2></div>
+    <ol class="flow">
+      <li class="rv"><span class="k">ARRIVAL</span><h3>ホテルへ</h3><p>グランドプリンスホテル大阪ベイへ。会場は地下1階です。</p></li>
+      <li class="rv"><span class="k">RECEPTION</span><h3>受付・ご入場</h3><p>会場入口で受付後、お席へご案内します。開場は開演の約30分前を予定しています。</p></li>
+      <li class="rv"><span class="k">SHOW TIME</span><h3>本編 約2時間</h3><p>お笑い、またはマジックのステージを約2時間お楽しみください。</p></li>
+      <li class="rv"><span class="k">AFTER</span><h3>終演</h3><p>終演後はそのままホテルでのご滞在や、ベイエリアの夜をお楽しみください。</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="venue">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Venue</p><h2>会場のご案内</h2>
+      <p class="sub">グランドプリンスホテル大阪ベイの地下1階にある、1950年代のラウンジをイメージした劇場型ダイニング「B.B.S. Event Dining」。ステージの正面と左右、床面をLEDビジョンが囲み、映像と照明で空間全体が舞台になります。</p></div>
+    <div class="gallery">
+      <figure><img src="img/venue-main.jpg" alt="夕焼けの映像を映したLEDとダイニング席"><figcaption>メインフロア</figcaption></figure>
+      <figure><img src="img/venue-led4.jpg" alt="海の映像を映した4面LEDのステージ"><figcaption>4面LEDステージ</figcaption></figure>
+      <figure><img src="img/venue-lounge.jpg" alt="照明に照らされたバーカウンター"><figcaption>バーカウンター</figcaption></figure>
+      <figure><img src="img/show-stage.jpg" alt="青い照明のステージと客席"><figcaption>ショー開催時の客席</figcaption></figure>
+      <figure><img src="img/venue-buffet.jpg" alt="ホテルシェフの料理が並ぶカウンター"><figcaption>ホテルシェフの料理</figcaption></figure>
+    </div>
+    <div class="vspec band">
+      <div><b>4面 LEDビジョン</b><span>正面・左右・床面を囲む映像演出</span></div>
+      <div><b>約300インチ</b><span>メインLEDの大きさ</span></div>
+      <div><b>ホテル地下1階</b><span>館内なので雨の日も安心</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="ticket">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Ticket</p><h2>料金</h2></div>
+    <div class="ticket-box rv">
+      <div>
+        <span class="k">ADMISSION</span>
+        <div class="price"><b><small>¥</small>19,800</b><span>お一人様（税込）</span></div>
+      </div>
+      <ul class="inc">
+        <li>お笑いナイト・マジックナイト共通料金</li>
+        <li>公演のご観覧（約2時間）とお席のご用意</li>
+        <li>お食事・お飲み物の内容は、販売開始時にご案内します</li>
+      </ul>
+    </div>
+    <div class="ticket-cta rv">
+      <p>販売開始日と開催スケジュールは、先行案内にご登録の方へ最初にお知らせします。</p>
+      <a class="btn-line" href="#notify">先行案内を受け取る</a>
+    </div>
+  </div>
+</section>
+
+<section class="half">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Presented by</p><h2>主催について</h2></div>
+    <div class="pr rv">
+      <div class="seal" aria-hidden="true"><div><b>SUN<br>MUSIC</b><small>since 1968</small></div></div>
+      <div>
+        <h3>サンミュージックプロダクション</h3>
+        <p>1968年創業の芸能プロダクション。お笑い部門「プロジェクトGET」に多くの芸人が所属し、東京・新宿で定期開催するお笑いライブ「GETライブ」は300回を超えています。BAY STAGEは、そのサンミュージックが大阪ベイエリアでお届けするステージです。</p>
+        <div class="pr-stats">
+          <div><b>1968</b><span>創業</span></div>
+          <div><b>300<small style="font-size:.55em">回超</small></b><span>GETライブ開催回数</span></div>
+        </div>
+        <div class="links">
+          <a href="https://www.sunmusic-gp.co.jp/" target="_blank" rel="noopener">サンミュージック公式サイト ↗</a>
+          <a href="https://www.sunmusic-gp.co.jp/search/" target="_blank" rel="noopener">所属タレント一覧 ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="access">
+  <div class="wrap">
+    <div class="head rv"><p class="en">Access</p><h2>アクセス</h2></div>
+    <div class="access-grid">
+      <img class="rv" src="img/venue-hotel.jpg" alt="夜のグランドプリンスホテル大阪ベイと周辺の街並み">
+      <dl class="adl rv">
+        <dt>会場</dt><dd>B.B.S. Event Dining<br>グランドプリンスホテル大阪ベイ 地下1階</dd>
+        <dt>住所</dt><dd>〒559-0034 大阪府大阪市住之江区南港北1-13-11</dd>
+        <dt>電車</dt><dd>大阪メトロ ニュートラム「中ふ頭」駅から徒歩約3分</dd>
+        <dt>リンク</dt><dd><a href="https://www.princehotels.co.jp/osakabay/" target="_blank" rel="noopener">グランドプリンスホテル大阪ベイ ↗</a><br><a href="https://bbs-eventdining.com/" target="_blank" rel="noopener">B.B.S. Event Dining ↗</a></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="head rv"><p class="en">FAQ</p><h2>よくあるご質問</h2></div>
+    <div class="faq-list">
+      <details><summary>出演者はいつわかりますか？</summary><p>公演ごとに、チケット販売の開始にあわせて発表します。先行案内にご登録いただくと、発表時にお知らせします。</p></details>
+      <details><summary>ホテルに宿泊しなくても参加できますか？</summary><p>はい。ご宿泊の有無にかかわらず、チケットをお持ちの方はどなたでもご参加いただけます。</p></details>
+      <details><summary>お笑いとマジックを同じ日に見られますか？</summary><p>開催日ごとにどちらか一方を上演します。両方をご覧になる場合は、それぞれの開催日のチケットをお求めください。</p></details>
+      <details><summary>席は選べますか？</summary><p>お席の指定方法は、販売開始時にご案内します。</p></details>
+      <details><summary>子どもも参加できますか？</summary><p>年齢制限は公演内容にあわせて設定し、販売開始時にご案内します。</p></details>
+      <details><summary>写真や動画は撮影できますか？</summary><p>撮影・録音の可否は、公演ごとに販売開始時にご案内します。</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="notify">
+  <div class="wrap">
+    <div class="head rv"><p class="en">News</p><h2>先行案内のご登録</h2>
+      <p class="sub">開催スケジュール、出演者、チケット販売開始を、一般公開より先にメールでお知らせします。</p></div>
+    <div class="notify-box rv">
+      <form id="nf" novalidate>
+        <div class="row">
+          <label for="nm">お名前<input id="nm" name="nm" autocomplete="name" required placeholder="山田 花子"></label>
+          <label for="em">メールアドレス<input id="em" name="em" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+        </div>
+        <fieldset>
+          <legend>気になるプログラム</legend>
+          <div class="chk">
+            <label for="p1"><input id="p1" type="checkbox" name="prog" value="comedy" checked> お笑いナイト</label>
+            <label for="p2"><input id="p2" type="checkbox" name="prog" value="magic" checked> マジックナイト</label>
+          </div>
+        </fieldset>
+        <div class="row">
+          <label for="dy">ご希望の曜日<select id="dy" name="dy"><option>どちらでも</option><option>金曜日</option><option>土曜日</option></select></label>
+          <label for="ppl">ご希望の人数<select id="ppl" name="ppl"><option>1名</option><option selected>2名</option><option>3〜4名</option><option>5名以上</option></select></label>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="web">Website<input id="web" name="web" tabindex="-1" autocomplete="off"></label></div>
+        <details class="privacy">
+          <summary>個人情報の取り扱いについて</summary>
+          <p>ご登録いただいたお名前・メールアドレス・ご希望内容は、株式会社ユニバーサルクルーズが SUN MUSIC BAY STAGE の開催スケジュール、出演者、チケット販売のご案内にのみ使用します。法令に基づく場合を除き、ご本人の同意なく第三者に提供することはありません。配信の停止や登録内容の削除をご希望の場合は、案内メールに記載の連絡先までお知らせください。</p>
+        </details>
+        <label class="agree" for="ok"><input id="ok" name="ok" type="checkbox"> 個人情報の取り扱いに同意する</label>
+        <button class="btn" type="submit" id="sb">登録する</button>
+        <p id="msg" class="done" hidden role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <a class="mark" href="#top" aria-label="トップへ">
+        <svg width="40" height="22" viewBox="0 0 40 22" aria-hidden="true"><path d="M4 21a16 16 0 0 1 32 0" fill="none" stroke="#A68A5B" stroke-width="1.1"/><circle cx="20" cy="21" r="8" fill="#C8643B"/><path d="M0 21.5h40" stroke="#222" stroke-width="1"/></svg>
+        <span><small>Sun Music presents</small><b>BAY STAGE</b></span>
+      </a>
+      <dl>
+        <dt>PRESENTS</dt><dd>株式会社サンミュージックプロダクション</dd>
+        <dt>VENUE</dt><dd>グランドプリンスホテル大阪ベイ B.B.S. Event Dining</dd>
+        <dt>OPERATION</dt><dd>株式会社ユニバーサルクルーズ</dd>
+      </dl>
+    </div>
+    <p class="copy">© 2026 SUN MUSIC BAY STAGE</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var g=document.getElementById('rays'),ns='http://www.w3.org/2000/svg',n=32;
+  for(var i=0;i<n;i++){
+    var a=Math.PI*2*i/n,long=i%2===0,r1=64,r2=long?140:108;
+    var l=document.createElementNS(ns,'line');
+    l.setAttribute('x1',150+Math.cos(a)*r1);l.setAttribute('y1',150+Math.sin(a)*r1);
+    l.setAttribute('x2',150+Math.cos(a)*r2);l.setAttribute('y2',150+Math.sin(a)*r2);
+    l.setAttribute('stroke','#FFFFFF');l.setAttribute('stroke-width',long?'.8':'.5');
+    l.setAttribute('opacity',long?'.75':'.45');l.setAttribute('class','ray');
+    l.style.animationDelay=(.6+i*.03)+'s';
+    g.appendChild(l);
+  }
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.documentElement.classList.add('js');
+    var els=[].slice.call(document.querySelectorAll('.rv')),vh=innerHeight;
+    els.forEach(function(el){ if(el.getBoundingClientRect().top>vh) el.classList.add('pre'); });
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.remove('pre'); io.unobserve(e.target);} });
+    },{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }
+  // 先行案内の登録：公開サイト（github.io）では Supabase に保存、それ以外（プレビュー）はデモ表示
+  var SB_URL='https://idhurnxhnlwfgorewbzx.supabase.co',SB_KEY='sb_publishable_VmsOebix91YOS06X8mqyKA_d-Hd87GU';
+  var LIVE=/\.github\.io$/.test(location.hostname)&&SB_KEY.indexOf('__')!==0;
+  var f=document.getElementById('nf'),m=document.getElementById('msg'),sb=document.getElementById('sb');
+  function say(t,err){m.hidden=false;m.textContent=t;m.classList.toggle('err',!!err);}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var nm=f.nm.value.trim(),em=f.em.value.trim();
+    var progs=[].slice.call(f.querySelectorAll('input[name=prog]:checked')).map(function(x){return x.value});
+    if(!nm||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){say('お名前と、正しい形式のメールアドレスを入力してください。',1);return;}
+    if(!progs.length){say('気になるプログラムを1つ以上選んでください。',1);return;}
+    if(!f.ok.checked){say('個人情報の取り扱いに同意のうえ、登録してください。',1);return;}
+    if(f.web.value){say('ご登録ありがとうございます。');return;}
+    if(!LIVE){say('ご登録ありがとうございます（プレビューのため、実際の登録は行われません）。');return;}
+    sb.disabled=true;sb.textContent='送信中…';
+    fetch(SB_URL+'/rest/v1/rpc/bay_stage_signup',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY},
+      body:JSON.stringify({p_name:nm,p_email:em,p_programs:progs,p_day:f.dy.value,p_party:f.ppl.value})
+    }).then(function(r){
+      if(!r.ok) throw new Error(r.status);
+      f.reset();f.ok.checked=false;
+      say('ご登録ありがとうございます。開催スケジュールと出演者が決まり次第、メールでお知らせします。');
+    }).catch(function(){
+      say('送信できませんでした。通信環境をご確認のうえ、もう一度お試しください。',1);
+    }).then(function(){sb.disabled=false;sb.textContent='登録する';});
+  });
+})();
+</script>
+
+</body>
+</html>
